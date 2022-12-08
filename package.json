@@ -14,5 +14,17 @@
   },
   "dependencies": {
     "mocha": "^7.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Myles995/javascript-operators-flight-manager.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Myles995/javascript-operators-flight-manager/issues"
+  },
+  "homepage": "https://github.com/Myles995/javascript-operators-flight-manager#readme"
 }
