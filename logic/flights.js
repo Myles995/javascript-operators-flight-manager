@@ -1,13 +1,13 @@
 function Flights() {
     function calculateNumberOfFlights(numberOfPassengers, flightCapacity){
-        let passengers = numberOfPassengers;
-        let capacity = flightCapacity;
-        if (passengers < 0) {
-            console.log("The number of passengers must be a positive integer value");
+        // Ensures # of passengers and flights is a positive integer
+        if ((numberOfPassengers < 0) || (!Number.isInteger(Number(numberOfPassengers)))) {
+           throw new console.error("The number of passengers must be a positive integer value"); 
         }
-        if (capacity < 0) {
-            console.log("The capacity of the flight must be a positive integer value");
+        if ((flightCapacity < 0) || (!Number.isInteger(Number(flightCapacity)))) {
+            throw new console.error("The capacity of the flight must be a positive integer value"); 
         }
+        // Calculates number of flights 
         if (numberOfPassengers % flightCapacity == 0) {
         return (numberOfPassengers / flightCapacity);
         } else if (numberOfPassengers % flightCapacity != 0) { 
@@ -15,10 +15,24 @@ function Flights() {
         }
         
         
-    }
+    }   
     
-    return {calculateNumberOfFlights};
+
+    function checkAircraftRevision(distanceLimit, distanceArray) {
+        let totalDistance = distanceArray={}
+        if (totalDistance <= (distanceLimit/2)) {
+            console.log("The revision needs to be done within the next 3 months");
+        } else if ((totalDistance >= (distanceLimit/2)) || (totalDistance <= ((distanceLimit/4)*3))) {
+            console.log("The revision needs to be done within the next 2 months");
+        } else if ((totalDistance > ((distanceLimit/4)*3)) || (totalDistance <= distanceLimit)) {
+            console.log("The revision needs to be done within the next month");
+        }
+    }
+
+    return {calculateNumberOfFlights, checkAircraftRevision};
 }
-        
+
+
+
 module.exports = Flights();
 
