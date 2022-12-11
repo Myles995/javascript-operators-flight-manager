@@ -19,13 +19,16 @@ function Flights() {
     
 
     function checkAircraftRevision(distanceLimit, distanceArray) {
-        let totalDistance = distanceArray={}
+        let totalDistance = 0
+
+        for 
+        
         if (totalDistance <= (distanceLimit/2)) {
-            console.log("The revision needs to be done within the next 3 months");
+            return "The revision needs to be done within the next 3 months";
         } else if ((totalDistance >= (distanceLimit/2)) || (totalDistance <= ((distanceLimit/4)*3))) {
-            console.log("The revision needs to be done within the next 2 months");
-        } else if ((totalDistance > ((distanceLimit/4)*3)) || (totalDistance <= distanceLimit)) {
-            console.log("The revision needs to be done within the next month");
+            return "The revision needs to be done within the next 2 months";
+        } else {
+            return "The revision needs to be done within the next month";
         }
     }
 
