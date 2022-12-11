@@ -21,11 +21,11 @@ function Flights() {
     function checkAircraftRevision(distanceLimit, distanceArray) {
         let totalDistance = 0
 
-        for 
+         
         
         if (totalDistance <= (distanceLimit/2)) {
             return "The revision needs to be done within the next 3 months";
-        } else if ((totalDistance >= (distanceLimit/2)) || (totalDistance <= ((distanceLimit/4)*3))) {
+        } else if ((totalDistance >= (distanceLimit/2))) {
             return "The revision needs to be done within the next 2 months";
         } else {
             return "The revision needs to be done within the next month";
