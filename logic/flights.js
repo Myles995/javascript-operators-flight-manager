@@ -17,16 +17,14 @@ function Flights() {
         
     }   
     
-
-    function checkAircraftRevision(distanceLimit, distanceArray) {
+    function checkAircraftRevision(distanceLimit, distancesArray) {
         let totalDistance = 0;
         let distance;
-        for (distance of distanceArray) {
-            totalDistance += distanceArray;
+        for(distance of distancesArray) {
+            totalDistance += distance;
         }
-
         if (totalDistance > distanceLimit) {
-            throw new Error("Flight maximum allowed distance (" + distanceLimit + ") exceeded. No flight is allowed any longer, you need to make the revision immediately.");
+            throw new Error("Flight exceeded maximun distance.");
         }
 
         if (totalDistance <= distanceLimit/2) {
@@ -36,10 +34,11 @@ function Flights() {
         } else {
             return "The revision needs to be done within the next month";
         }
-         
+    
+    }   
         
         
-    }
+    
 
     return {calculateNumberOfFlights, checkAircraftRevision};
 }
